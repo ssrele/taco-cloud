@@ -10,10 +10,10 @@
         <h1>Design your taco!</h1>
         <img th:src="@{/images/TacoCloud.png}" />
 
-        <form method="POST" th:object="${design}">
+        <form method="POST" th:object="${taco}">
             <div class="grid">
                 <div class="ingredient-group" id="wraps">
-                    <h3>Designate your wrap:</h3>
+                    <h3>Choose your wrap :</h3>
                     <div th:each="ingredient : ${wrap}">
                         <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
                         <span th:text="${ingredient.name}">INGREDIENT</span><br>
@@ -21,35 +21,35 @@
                 </div>
 
                 <div class="ingredient-group" id="proteins">
-                    <h3>Designate your wrap:</h3>
+                    <h3>Select Protein :</h3>
                     <div th:each="ingredient : ${protein}">
                         <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
                         <span th:text="${ingredient.name}">INGREDIENT</span><br>
                     </div>
                 </div>
                 <div class="ingredient-group" id="cheeses">
-                    <h3>Designate your wrap:</h3>
+                    <h3>Which cheese you would like :</h3>
                     <div th:each="ingredient : ${cheese}">
                         <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
                         <span th:text="${ingredient.name}">INGREDIENT</span><br>
                     </div>
                 </div>
                 <div class="ingredient-group" id="veggies">
-                    <h3>Designate your wrap:</h3>
+                    <h3>Any veggies ? :</h3>
                     <div th:each="ingredient : ${veggies}">
                         <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
                         <span th:text="${ingredient.name}">INGREDIENT</span><br>
                     </div>
                 </div>
                 <div class="ingredient-group" id="sauces">
-                    <h3>Designate your wrap:</h3>
+                    <h3>And last which sauce :</h3>
                     <div th:each="ingredient : ${sauce}">
                         <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
                         <span th:text="${ingredient.name}">INGREDIENT</span><br>
                     </div>
                 </div>
 
-                <h3>Name your creation:</h3>
+                <h3>Name your creation :</h3>
                 <input type="text" th:field="*{name}" />
                 <br/>
                 <button>Submit your taco</button>
